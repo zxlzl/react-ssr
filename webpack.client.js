@@ -2,6 +2,7 @@ const path = require('path')
 // 服务端webpack
 module.exports = {
   mode:'development',
+  // 客户端入口
   entry: './client/index.js',
   // 客户端输出
   output: {

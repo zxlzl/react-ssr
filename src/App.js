@@ -6,7 +6,7 @@ function App(props) {
     <div>
       <h1>hello {props.name}</h1>
       <div>count值：{count}</div>
-      <button onClick={() => setCount((count += 1))}>累加</button>
+      <button onClick={() => setCount((count+10000))}>累加</button>
     </div>
   );
 }

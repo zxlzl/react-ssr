@@ -6,6 +6,8 @@ import App from '../src/App';
 
 const app = express()
 
+app.use(express.static("public"))
+
 app.get('/',(req,res)=>{
   // const Page = <App name="zxl"></App>
   // 把react组件解析成html
@@ -17,6 +19,7 @@ app.get('/',(req,res)=>{
       <title>react ssr</title>
     </head>
     <div id="root">${content}</div>
+    <script src="/bundle.js"></script>
   </html>
   `)
 })
