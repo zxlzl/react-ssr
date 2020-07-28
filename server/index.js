@@ -7,9 +7,9 @@ import App from '../src/App';
 const app = express()
 
 app.get('/',(req,res)=>{
-  const Page = <App></App>
+  // const Page = <App name="zxl"></App>
   // 把react组件解析成html
-  const content = renderToString(Page)
+  const content = renderToString(App)
   res.send(`
   <html>
     <head>
