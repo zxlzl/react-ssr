@@ -1,14 +1,11 @@
 import React, { useState } from "react";
+import { Route } from "react-router-dom";
+import Index from "./container/index";
+import About from "./container/about";
 
-function App(props) {
-  const [count, setCount] = useState(1);
-  return (
-    <div>
-      <h1>hello {props.name}</h1>
-      <div>count值：{count}</div>
-      <button onClick={() => setCount((count+10000))}>累加</button>
-    </div>
-  );
-}
-
-export default <App name="zxl"></App>;
+export default (
+  <div>
+    <Route path="/" exact component={Index}></Route>
+    <Route path="/about" exact component={About}></Route>
+  </div>
+);
