@@ -4,11 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../src/store/store";
 
-import App from "../src/App";
+import routes from "../src/App";
 
 const page = (
   <Provider store={store}>
-    <BrowserRouter>{App}</BrowserRouter>
+    <BrowserRouter>
+    {/* {App} */}
+    {routes.map(route=><Route {...route}></Route>)}
+    </BrowserRouter>
   </Provider>
 );
 

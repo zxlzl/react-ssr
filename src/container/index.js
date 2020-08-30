@@ -4,9 +4,9 @@ import {connect} from 'react-redux';
 
 function Index(props) {
   const [count, setCount] = useState(1);
-  useEffect(()=>{
-    props.getIndexList()
-  },[])
+  // useEffect(()=>{
+  //   props.getIndexList()
+  // },[])
   return (
     <div>
       <h1>hello {props.name}</h1>
@@ -22,4 +22,8 @@ function Index(props) {
   );
 }
 
+
+Index.loadData = (store) => {
+  return store.dispatch(getIndexList())
+}
 export default connect(state=>({list:state.index.list}),{getIndexList})(Index)
