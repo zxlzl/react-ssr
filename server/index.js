@@ -46,7 +46,9 @@ app.get("*", (req, res) => {
       <title>react ssr</title>
     </head>
     <div id="root">${content}</div>
-    <script></script>
+    <script>
+      window.__context = ${}
+    </script>
     <script src="/bundle.js"></script>
   </html>
   `);
