@@ -1,4 +1,5 @@
 // 首页的逻辑
+import axios from 'axios'
 
 // actioType
 const GET_LIST = 'INDEX/GET_LIST'
@@ -9,11 +10,11 @@ const changeList = list = ({
   list
 })
 
-const getIndexList = server => {
+export const getIndexList = server => {
   return (dispatch, getState, axiosInstance)=>{
     return axios.get('http://localhost:9093/course/list')
       .then(res=>{
-        const {list} = res.data
+        const {list} = res.data;
         dispatch(changeList(list))
       })
   }

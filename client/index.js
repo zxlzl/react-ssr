@@ -1,10 +1,16 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import {BrowserRouter} from 'react-router-dom'
+import React from "react";
+import ReactDom from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "../src/store/store";
 
-import App from '../src/App';
+import App from "../src/App";
 
-const page = <BrowserRouter>{App}</BrowserRouter>
+const page = (
+  <Provider store={store}>
+    <BrowserRouter>{App}</BrowserRouter>
+  </Provider>
+);
 
 // 注水 客户端入口
-ReactDom.hydrate(page,document.getElementById('root'))
+ReactDom.hydrate(page, document.getElementById("root"));
