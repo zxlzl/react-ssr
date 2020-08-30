@@ -6,6 +6,7 @@ const app = express()
 
 app.get('/api/course/list',(req,res)=>{
   // 支持跨域调用
+  
   res.header('Access-Control-Allow-Origin','*'),
   res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE'),
   res.header('Content-Type','application/json;charset=utf-8'),
